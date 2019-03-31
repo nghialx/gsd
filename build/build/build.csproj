@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\cs-skin-elastic.css" />
     <Content Include="Assets\css\custom.css" />
     <Content Include="Assets\css\lib\chosen\chosen-sprite%402x.png" />
@@ -177,6 +178,7 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_TicketCreate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
