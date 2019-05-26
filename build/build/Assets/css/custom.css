@@ -41,6 +41,20 @@
 .logo{
     height:35px !important;
 }
+<<<<<<< HEAD
 .menuToggle{
 
+=======
+
+
+.buttonCreate {
+    float:right;
+    padding:12px;
+}
+/*.modal-content{
+    width:90%!important
+}*/
+.modal-lg{
+    max-width:1000px!important
+>>>>>>> origin/master
 }

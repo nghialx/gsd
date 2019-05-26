@@ -825,7 +825,7 @@ aside.left-panel {
   margin-left: 280px;
   margin-top: 55px; }
   .right-panel .top-left {
-    width: 350px;
+    width: 400px;
     float: left; }
   .right-panel .top-rigth {
     float: left; }
@@ -872,7 +872,11 @@ aside.left-panel {
   top: 0;
   z-index: 999; }
 .right-panel .navbar-brand {
+<<<<<<< HEAD
   width: 180px;
+=======
+  /*width: 100px;*/
+>>>>>>> origin/master
   display: inline-block; }
 .right-panel .menutoggle {
   padding-top: 7px; }
