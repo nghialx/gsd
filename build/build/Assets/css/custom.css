@@ -47,8 +47,7 @@
 =======
 
 
-.buttonCreate {
-    float:right;
+.buttonCreate{
     padding:12px;
 }
 /*.modal-content{
@@ -57,4 +56,15 @@
 .modal-lg{
     max-width:1000px!important
 >>>>>>> origin/master
+}
+
+.right-panel{
+    background-color:white!important
+}
+
+.footer{
+    width:100%;
+    padding:2px;
+    position:fixed!important;
+    margin:0px auto;
 }

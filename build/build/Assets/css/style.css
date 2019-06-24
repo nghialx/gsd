@@ -349,7 +349,9 @@ body {
   display: table;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  width: 100%; }
+  width: 100%; 
+  background:#f8f8f8;
+}
 
 p {
   font-size: 16px;
@@ -821,9 +823,11 @@ aside.left-panel {
 
 /* Right panel */
 .right-panel {
-  background: #f1f2f7;
+  /*background: #f1f2f7;*/
+  background:#f8f8f8;
   margin-left: 280px;
-  margin-top: 55px; }
+  margin-top: 55px; 
+}
   .right-panel .top-left {
     width: 400px;
     float: left; }
@@ -2411,10 +2415,17 @@ footer.site-footer {
     max-width: 60px;
     margin-top: 8px; }
 
-  footer.site-footer {
-    padding: 0 1.125em; }
-    footer.site-footer .footer-inner {
-      padding: 1.75em 1em; } }
+    footer{
+        position:absolute;
+        top:auto;
+    }
+    footer.site-footer {
+        padding: 0 1.125em;
+        
+    }
+        footer.site-footer .footer-inner {
+            padding: 1.75em 1em;
+        } }
 @media (max-width: 992px) {
   [class*="col"].no-padding {
     -webkit-box-flex: 0;

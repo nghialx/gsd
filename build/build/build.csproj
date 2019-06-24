@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -149,15 +157,87 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo2.png" />
     <Content Include="Images\logo_white.svg" />
+    <Content Include="Models\BookingModal.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingModal.edmx</DependentUpon>
+      <LastGenOutput>BookingModal.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BookingModal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingModal.edmx</DependentUpon>
+      <LastGenOutput>BookingModal.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Views\Home\index.html" />
     <Content Include="Views\Home\page-login.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BUsController.cs" />
+    <Compile Include="Controllers\FSUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LevelsController.cs" />
+    <Compile Include="Controllers\LinesController.cs" />
+    <Compile Include="Controllers\PeriodsController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Booking.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookingModal.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingModal.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookingModal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookingModal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingModal.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BU.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FSU.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Level.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Line.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Member.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Period.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>BookingModal.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -171,6 +251,13 @@
     <Content Include="Assets\scss\style.scss" />
     <Content Include="Images\.gitignore" />
     <Content Include="Images\logo.psd" />
+    <EntityDeploy Include="Models\BookingModal.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookingModal.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BookingModal.edmx.diagram">
+      <DependentUpon>BookingModal.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -179,6 +266,37 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_TicketCreate.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\FSUs\Create.cshtml" />
+    <Content Include="Views\FSUs\Delete.cshtml" />
+    <Content Include="Views\FSUs\Details.cshtml" />
+    <Content Include="Views\FSUs\Edit.cshtml" />
+    <Content Include="Views\FSUs\Index.cshtml" />
+    <Content Include="Views\BUs\Create.cshtml" />
+    <Content Include="Views\BUs\Delete.cshtml" />
+    <Content Include="Views\BUs\Details.cshtml" />
+    <Content Include="Views\BUs\Edit.cshtml" />
+    <Content Include="Views\BUs\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Periods\Create.cshtml" />
+    <Content Include="Views\Periods\Delete.cshtml" />
+    <Content Include="Views\Periods\Details.cshtml" />
+    <Content Include="Views\Periods\Edit.cshtml" />
+    <Content Include="Views\Periods\Index.cshtml" />
+    <Content Include="Views\Lines\Create.cshtml" />
+    <Content Include="Views\Lines\Delete.cshtml" />
+    <Content Include="Views\Lines\Details.cshtml" />
+    <Content Include="Views\Lines\Edit.cshtml" />
+    <Content Include="Views\Lines\Index.cshtml" />
+    <Content Include="Views\Levels\Create.cshtml" />
+    <Content Include="Views\Levels\Delete.cshtml" />
+    <Content Include="Views\Levels\Details.cshtml" />
+    <Content Include="Views\Levels\Edit.cshtml" />
+    <Content Include="Views\Levels\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,7 +306,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
